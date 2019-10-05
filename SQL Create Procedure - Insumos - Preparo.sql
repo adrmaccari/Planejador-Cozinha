@@ -6,15 +6,15 @@ CREATE PROCEDURE sp_Insumos_criar_preparo
 	@FeitoComprado CHAR(1),
 	@PrecoPadrao DECIMAL(19,4),
 	@IdUnidadeConsumo INT,
-	@IdTipoInsumo INT
+	@RendimentoReceita DECIMAL(19,4)
 
 AS
 	INSERT INTO Insumo (Nome, Descricao, FeitoComprado, PrecoPadrao, IdUnidadeConsumo)
 	VALUES (@Nome, @Descricao, @FeitoComprado, @PrecoPadrao, @IdUnidadeConsumo)
 	SET @IdInsumo = SCOPE_IDENTITY()
 
-	INSERT INTO Preparo(IdInsumo)
-	VALUES(@IdInsumo)
+	INSERT INTO Preparo(IdInsumo,RendimentoReceita)
+	VALUES(@IdInsumo,@RendimentoReceita)
 GO
 
 CREATE PROCEDURE sp_Insumos_editar_preparo
@@ -63,7 +63,7 @@ CREATE PROCEDURE sp_Insumos_buscar_id_preparo
 	@IdInsumo INT
 AS 
 	SELECT * FROM Insumo 
-	INNER JOIN Preparo ON Insumo.IdInsumo=Preparo.IdInsumo
+	INNER JOIN Preparo ON Insumo.IdInsumo=Preparo.IdInsumo AND Insumo.IdInsumo=@IdInsumo
 	INNER JOIN UnidadeConsumo ON Insumo.IdUnidadeConsumo=UnidadeConsumo.IdunidadeConsumo;
 GO
 

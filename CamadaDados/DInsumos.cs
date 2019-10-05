@@ -247,7 +247,7 @@ namespace CamadaDados
                 //criar o comando
                 SqlCommand sqlComando = new SqlCommand();
                 sqlComando.Connection = Conexao;
-                sqlComando.CommandText = "sp_Insumos_mostrar_comprado";
+                sqlComando.CommandText = "sp_Insumos_mostrar_preparo";
                 sqlComando.CommandType = CommandType.StoredProcedure;
 
                 // executa o comando e guarda os resultdos em um SqlDataAdapter

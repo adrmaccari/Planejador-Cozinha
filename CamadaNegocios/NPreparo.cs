@@ -8,7 +8,7 @@ using System.Data;
 
 namespace CamadaNegocios
 {
-    static class NPreparo
+    public class NPreparo
     {
         public static string Inserir(string nome, string descricao, char feitoComprado, double precoPadrao, int idUnidadeConsumo, double rendimentoReceita)
         {
@@ -26,56 +26,50 @@ namespace CamadaNegocios
 
         public static string Excluir(int idinsumo)
         {
-            DInsumos Objeto = new DInsumos();
+            DPreparo Objeto = new DPreparo();
 
             Objeto.IdInsumo = idinsumo;
 
             return Objeto.Excluir(Objeto);
         }
 
-        public static string Editar(int idinsumo, string nome, string descricao, char feitoComprado, double precoPadrao, int idUnidadeConsumo, int idTipoInsumo)
+        public static string Editar(int idinsumo, string nome, string descricao, char feitoComprado, double precoPadrao, int idUnidadeConsumo, double rendimentoReceita)
         {
 
-            DInsumos Objeto = new DInsumos();
+            DPreparo Objeto = new DPreparo();
 
             Objeto.IdInsumo = idinsumo;
             Objeto.Nome = nome;
             Objeto.FeitoComprado = feitoComprado;
             Objeto.Descricao = descricao;
             Objeto.PrecoPadrao = precoPadrao;
-            Objeto.IdTipoInsumo = idTipoInsumo;
             Objeto.IdUnidadeConsumo = idUnidadeConsumo;
+            Objeto.RendimentoReceita = rendimentoReceita;
 
             return Objeto.Editar(Objeto);
         }
 
         public static DataTable Mostrar()
         {
-            DInsumos Objeto = new DInsumos();
+            DPreparo Objeto = new DPreparo();
 
             return Objeto.Mostrar();
         }
 
         public static DataTable BuscarNMome(string nomeinsumo)
         {
-            DInsumos Objeto = new DInsumos();
+            DPreparo Objeto = new DPreparo();
 
             return Objeto.BuscarNome(nomeinsumo);
         }
 
         public static DataTable BuscarId(int IdInsumo)
         {
-            DInsumos Objeto = new DInsumos();
+            DPreparo Objeto = new DPreparo();
 
             return Objeto.BuscarId(IdInsumo);
         }
 
-        public static DataTable BuscarTipoInsumo(string tipoinsumo)
-        {
-            DInsumos Objeto = new DInsumos();
-
-            return Objeto.BuscarTipoInsumo(tipoinsumo);
-        }
     }
 }
 
