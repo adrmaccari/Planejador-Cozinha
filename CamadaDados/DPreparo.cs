@@ -200,7 +200,7 @@ namespace CamadaDados
                 SqlParameter prmRendimentoReceita = new SqlParameter();
                 prmRendimentoReceita.ParameterName = "@RendimentoReceita";
                 prmRendimentoReceita.SqlDbType = SqlDbType.Decimal;
-                prmRendimentoReceita.Value = insumo.PrecoPadrao;
+                prmRendimentoReceita.Value = insumo.RendimentoReceita;
 
                 SqlParameter prmIdUnidadeConsumo = new SqlParameter();
                 prmIdUnidadeConsumo.ParameterName = "@IdUnidadeConsumo";

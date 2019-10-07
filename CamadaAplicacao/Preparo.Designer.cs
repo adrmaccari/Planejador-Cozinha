@@ -54,19 +54,19 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtCalorias = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.cmbPreparos = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.txtRendimento = new System.Windows.Forms.TextBox();
+            this.txtPesoUnitario = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbUnidade = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPreco = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtPesoUnitario = new System.Windows.Forms.TextBox();
-            this.txtRendimento = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cmbPreparos = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -350,26 +350,6 @@
             this.label7.Text = "Calorias";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cmbPreparos
-            // 
-            this.cmbPreparos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbPreparos.FormattingEnabled = true;
-            this.cmbPreparos.Location = new System.Drawing.Point(37, 37);
-            this.cmbPreparos.Name = "cmbPreparos";
-            this.cmbPreparos.Size = new System.Drawing.Size(354, 24);
-            this.cmbPreparos.TabIndex = 19;
-            this.cmbPreparos.SelectionChangeCommitted += new System.EventHandler(this.cmbPreparos_SelectionChangeCommitted);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(40, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 16);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Preparo";
-            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.Silver;
@@ -387,21 +367,57 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Quantitativo";
             // 
+            // txtRendimento
+            // 
+            this.txtRendimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRendimento.Location = new System.Drawing.Point(378, 49);
+            this.txtRendimento.Name = "txtRendimento";
+            this.txtRendimento.Size = new System.Drawing.Size(100, 22);
+            this.txtRendimento.TabIndex = 20;
+            // 
+            // txtPesoUnitario
+            // 
+            this.txtPesoUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesoUnitario.Location = new System.Drawing.Point(41, 116);
+            this.txtPesoUnitario.Name = "txtPesoUnitario";
+            this.txtPesoUnitario.Size = new System.Drawing.Size(100, 22);
+            this.txtPesoUnitario.TabIndex = 19;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(378, 23);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(150, 16);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "Rendimento da Receita";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(41, 93);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(89, 16);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Peso Unitário";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(361, 33);
+            this.label6.Location = new System.Drawing.Point(41, 158);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 16);
+            this.label6.Size = new System.Drawing.Size(93, 16);
             this.label6.TabIndex = 16;
-            this.label6.Text = "Preço Padrão";
+            this.label6.Text = "Preço Unitário";
             // 
             // cmbUnidade
             // 
             this.cmbUnidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbUnidade.FormattingEnabled = true;
-            this.cmbUnidade.Location = new System.Drawing.Point(38, 47);
+            this.cmbUnidade.Location = new System.Drawing.Point(41, 47);
             this.cmbUnidade.Name = "cmbUnidade";
             this.cmbUnidade.Size = new System.Drawing.Size(121, 24);
             this.cmbUnidade.TabIndex = 13;
@@ -410,7 +426,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(38, 28);
+            this.label5.Location = new System.Drawing.Point(41, 28);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 16);
             this.label5.TabIndex = 15;
@@ -419,46 +435,10 @@
             // txtPreco
             // 
             this.txtPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPreco.Location = new System.Drawing.Point(361, 49);
+            this.txtPreco.Location = new System.Drawing.Point(41, 178);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(100, 22);
             this.txtPreco.TabIndex = 14;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(38, 152);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(118, 16);
-            this.label13.TabIndex = 17;
-            this.label13.Text = "Peso por Unidade";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(38, 88);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(150, 16);
-            this.label14.TabIndex = 18;
-            this.label14.Text = "Rendimento da Receita";
-            // 
-            // txtPesoUnitario
-            // 
-            this.txtPesoUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesoUnitario.Location = new System.Drawing.Point(38, 175);
-            this.txtPesoUnitario.Name = "txtPesoUnitario";
-            this.txtPesoUnitario.Size = new System.Drawing.Size(100, 22);
-            this.txtPesoUnitario.TabIndex = 19;
-            // 
-            // txtRendimento
-            // 
-            this.txtRendimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRendimento.Location = new System.Drawing.Point(38, 114);
-            this.txtRendimento.Name = "txtRendimento";
-            this.txtRendimento.Size = new System.Drawing.Size(100, 22);
-            this.txtRendimento.TabIndex = 20;
             // 
             // tabPage4
             // 
@@ -481,6 +461,26 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(605, 248);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // cmbPreparos
+            // 
+            this.cmbPreparos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPreparos.FormattingEnabled = true;
+            this.cmbPreparos.Location = new System.Drawing.Point(37, 37);
+            this.cmbPreparos.Name = "cmbPreparos";
+            this.cmbPreparos.Size = new System.Drawing.Size(354, 24);
+            this.cmbPreparos.TabIndex = 19;
+            this.cmbPreparos.SelectionChangeCommitted += new System.EventHandler(this.cmbPreparos_SelectionChangeCommitted);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(40, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 16);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Preparo";
             // 
             // frmPreparo
             // 
