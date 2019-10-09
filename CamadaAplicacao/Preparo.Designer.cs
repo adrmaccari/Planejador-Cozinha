@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
             this.btEditar = new System.Windows.Forms.Button();
             this.btExcluir = new System.Windows.Forms.Button();
             this.btIncluir = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabFichaTecnica = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txtIdInsumo = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -64,15 +65,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtPreco = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btFichaTecnica = new System.Windows.Forms.Button();
+            this.gridFichaTecnica = new System.Windows.Forms.DataGridView();
             this.cmbPreparos = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.tabFichaTecnica.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridFichaTecnica)).BeginInit();
             this.SuspendLayout();
             // 
             // btCancelar
@@ -130,17 +132,17 @@
             this.btIncluir.UseVisualStyleBackColor = true;
             this.btIncluir.Click += new System.EventHandler(this.btIncluir_Click);
             // 
-            // tabControl1
+            // tabFichaTecnica
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(33, 158);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(646, 353);
-            this.tabControl1.TabIndex = 20;
+            this.tabFichaTecnica.Controls.Add(this.tabPage1);
+            this.tabFichaTecnica.Controls.Add(this.tabPage2);
+            this.tabFichaTecnica.Controls.Add(this.tabPage3);
+            this.tabFichaTecnica.Controls.Add(this.tabPage4);
+            this.tabFichaTecnica.Location = new System.Drawing.Point(33, 158);
+            this.tabFichaTecnica.Name = "tabFichaTecnica";
+            this.tabFichaTecnica.SelectedIndex = 0;
+            this.tabFichaTecnica.Size = new System.Drawing.Size(646, 353);
+            this.tabFichaTecnica.TabIndex = 20;
             // 
             // tabPage1
             // 
@@ -443,7 +445,8 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.Silver;
-            this.tabPage4.Controls.Add(this.dataGridView1);
+            this.tabPage4.Controls.Add(this.btFichaTecnica);
+            this.tabPage4.Controls.Add(this.gridFichaTecnica);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -451,16 +454,40 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Ficha Técnica";
             // 
-            // dataGridView1
+            // btFichaTecnica
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 62);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(605, 248);
-            this.dataGridView1.TabIndex = 0;
+            this.btFichaTecnica.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btFichaTecnica.Location = new System.Drawing.Point(488, 12);
+            this.btFichaTecnica.Name = "btFichaTecnica";
+            this.btFichaTecnica.Size = new System.Drawing.Size(133, 44);
+            this.btFichaTecnica.TabIndex = 26;
+            this.btFichaTecnica.Text = "Editar Ficha Tecnica";
+            this.btFichaTecnica.UseVisualStyleBackColor = true;
+            this.btFichaTecnica.Click += new System.EventHandler(this.btFichaTecnica_Click);
+            // 
+            // gridFichaTecnica
+            // 
+            this.gridFichaTecnica.AllowUserToAddRows = false;
+            this.gridFichaTecnica.AllowUserToDeleteRows = false;
+            this.gridFichaTecnica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.gridFichaTecnica.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridFichaTecnica.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridFichaTecnica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridFichaTecnica.EnableHeadersVisualStyles = false;
+            this.gridFichaTecnica.Location = new System.Drawing.Point(16, 62);
+            this.gridFichaTecnica.MultiSelect = false;
+            this.gridFichaTecnica.Name = "gridFichaTecnica";
+            this.gridFichaTecnica.ReadOnly = true;
+            this.gridFichaTecnica.RowHeadersVisible = false;
+            this.gridFichaTecnica.Size = new System.Drawing.Size(605, 248);
+            this.gridFichaTecnica.TabIndex = 0;
             // 
             // cmbPreparos
             // 
@@ -492,13 +519,13 @@
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.btExcluir);
             this.Controls.Add(this.btIncluir);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabFichaTecnica);
             this.Controls.Add(this.cmbPreparos);
             this.Controls.Add(this.label2);
             this.Name = "frmPreparo";
             this.Text = "Preparo";
             this.Load += new System.EventHandler(this.frmPreparo_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.tabFichaTecnica.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -506,7 +533,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridFichaTecnica)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,7 +546,7 @@
         private System.Windows.Forms.Button btEditar;
         private System.Windows.Forms.Button btExcluir;
         private System.Windows.Forms.Button btIncluir;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabFichaTecnica;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox txtIdInsumo;
         private System.Windows.Forms.Label label16;
@@ -552,6 +579,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPreco;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridFichaTecnica;
+        private System.Windows.Forms.Button btFichaTecnica;
     }
 }

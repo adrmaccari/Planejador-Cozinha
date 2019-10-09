@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DConexao.cs" />
+    <Compile Include="DFichaTecnica.cs" />
     <Compile Include="DInsumos.cs" />
     <Compile Include="DTipoInsumo.cs" />
     <Compile Include="DUnidadeConsumo.cs" />

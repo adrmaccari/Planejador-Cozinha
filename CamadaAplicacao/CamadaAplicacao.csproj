@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FichaTecnica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FichaTecnica.Designer.cs">
+      <DependentUpon>FichaTecnica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputBox.Designer.cs">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Insumos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +80,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Configuracoes.resx">
       <DependentUpon>Configuracoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FichaTecnica.resx">
+      <DependentUpon>FichaTecnica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputBox.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Insumos.resx">
       <DependentUpon>Insumos.cs</DependentUpon>

@@ -15,6 +15,7 @@ namespace CamadaAplicacao
     {
         private bool bolNovo;
         private bool bolPreparoCarregado;
+        public int IdPreparo;
 
         public frmPreparo()
         {
@@ -40,9 +41,8 @@ namespace CamadaAplicacao
         public void PrencherDadosPreparo()
         {
             DataTable rsInsumo = new DataTable();
-            int IdInsumo = Convert.ToInt32(((DataRowView)cmbPreparos.SelectedItem).Row[0].ToString());
-
-            rsInsumo = NPreparo.BuscarId(IdInsumo);
+       
+            rsInsumo = NPreparo.BuscarId(IdPreparo);
 
             txtIdInsumo.Text = rsInsumo.Rows[0]["IdInsumo"].ToString();
             txtNome.Text = rsInsumo.Rows[0]["Nome"].ToString();
@@ -50,6 +50,8 @@ namespace CamadaAplicacao
             txtPreco.Text = rsInsumo.Rows[0]["PrecoPadrao"].ToString();
             cmbUnidade.SelectedValue = rsInsumo.Rows[0]["IdUnidadeConsumo"].ToString();
             txtRendimento.Text = rsInsumo.Rows[0]["RendimentoReceita"].ToString();
+
+            CarregarFichaTecnica();
         }
 
         //-----  Carregar todas as UNIDADES------------------------------------------------------------------------
@@ -65,6 +67,21 @@ namespace CamadaAplicacao
             cmbUnidade.DataSource = rsUnidadeConsumo;
             cmbUnidade.DisplayMember = "Simbolo";
             cmbUnidade.ValueMember = "IdUnidadeConsumo";
+        }
+
+
+        //-----   Carregar FICHA TECNICA    ------------------------------------------------------------------------
+        public void CarregarFichaTecnica()
+        {
+            DataTable rsFichaTecnica = new DataTable();
+
+            rsFichaTecnica = NFichaTecnica.MostrarItens(IdPreparo);
+
+            //Carrega o comboboc UNIDADES
+            gridFichaTecnica.DataSource = rsFichaTecnica;
+            gridFichaTecnica.Columns["IdPreparo"].Visible = false;
+            gridFichaTecnica.Columns["IdInsumo"].Visible = false;
+
         }
 
 
@@ -144,6 +161,7 @@ namespace CamadaAplicacao
 
         private void cmbPreparos_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            IdPreparo = Convert.ToInt32(((DataRowView)cmbPreparos.SelectedItem).Row[0].ToString());
             PrencherDadosPreparo();
             bolPreparoCarregado = true;
             AtivarModoEdicao(false);
@@ -200,6 +218,16 @@ namespace CamadaAplicacao
             bolNovo = false;
             LimparCampos();
             AtivarModoEdicao(false);
+        }
+
+        private void btFichaTecnica_Click(object sender, EventArgs e)
+        {
+            if (bolPreparoCarregado)
+            {
+                FichaTecnica NovaReceita = new FichaTecnica(int.Parse(txtIdInsumo.Text), txtNome.Text, int.Parse(cmbUnidade.SelectedValue.ToString()), double.Parse(txtRendimento.Text));
+                NovaReceita.ShowDialog();
+                CarregarFichaTecnica();
+            }
         }
     }
 }
