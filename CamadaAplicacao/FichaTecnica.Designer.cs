@@ -257,6 +257,7 @@
             this.btSair.TabIndex = 12;
             this.btSair.Text = "Sair";
             this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
             // FichaTecnica
             // 

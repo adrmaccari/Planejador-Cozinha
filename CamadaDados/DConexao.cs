@@ -8,6 +8,6 @@ namespace CamadaDados
 {
     class DConexao
     {
-        public static string strConexao = "Server= tcp:foodmastersrv.database.windows.net ; Database = CHEFSYSTEM ; User ID=CHEFADMIN ; Password=script!57";
+        public static string strConexao = "Server= tcp:foodmastersrv.database.windows.net ; Database = CHEFSYSTEM ; User ID=CHEFADMIN ; Password=dbAdmin2019";
     }
 }

@@ -138,5 +138,10 @@ namespace CamadaAplicacao
             }
 
         }
+
+        private void btSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
