@@ -16,7 +16,7 @@ namespace CamadaAplicacao
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmInsumos());
+            Application.Run(new frmComprado());
         }
     }
 }

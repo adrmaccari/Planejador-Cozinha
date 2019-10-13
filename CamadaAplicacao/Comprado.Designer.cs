@@ -1,6 +1,6 @@
 ﻿namespace CamadaAplicacao
 {
-    partial class frmInsumos
+    partial class frmComprado
     {
         /// <summary>
         /// Required designer variable.
@@ -531,7 +531,7 @@
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
-            // frmInsumos
+            // frmComprado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -546,7 +546,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbFiltroTipoInsumo);
-            this.Name = "frmInsumos";
+            this.Name = "frmComprado";
             this.Text = "Insumos";
             this.Load += new System.EventHandler(this.frmInsumos_Load);
             this.tabControl1.ResumeLayout(false);

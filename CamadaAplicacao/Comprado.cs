@@ -11,11 +11,11 @@ using CamadaNegocios;
 
 namespace CamadaAplicacao
 {
-    public partial class frmInsumos : Form
+    public partial class frmComprado : Form
     {
         private bool bolNovo;
         private bool bolInsumoCarregado;
-        public frmInsumos()
+        public frmComprado()
         {
             InitializeComponent();
         }

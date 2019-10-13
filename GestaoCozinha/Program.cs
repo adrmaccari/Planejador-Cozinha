@@ -17,7 +17,7 @@ namespace GestaoCozinha
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPreparo());
+            Application.Run(new Principal());
         }
     }
 }

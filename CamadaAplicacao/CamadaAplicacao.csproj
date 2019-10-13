@@ -58,11 +58,11 @@
     <Compile Include="InputBox.Designer.cs">
       <DependentUpon>InputBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Insumos.cs">
+    <Compile Include="Comprado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Insumos.Designer.cs">
-      <DependentUpon>Insumos.cs</DependentUpon>
+    <Compile Include="Comprado.Designer.cs">
+      <DependentUpon>Comprado.cs</DependentUpon>
     </Compile>
     <Compile Include="Configuracoes.cs">
       <SubType>Form</SubType>
@@ -87,8 +87,8 @@
     <EmbeddedResource Include="InputBox.resx">
       <DependentUpon>InputBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Insumos.resx">
-      <DependentUpon>Insumos.cs</DependentUpon>
+    <EmbeddedResource Include="Comprado.resx">
+      <DependentUpon>Comprado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preparo.resx">
       <DependentUpon>Preparo.cs</DependentUpon>
