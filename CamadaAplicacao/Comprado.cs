@@ -94,6 +94,7 @@ namespace CamadaAplicacao
             txtNome.Text = rsInsumo.Rows[0]["Nome"].ToString();
             txtDescricao.Text = rsInsumo.Rows[0]["Descricao"].ToString();
             txtPreco.Text = rsInsumo.Rows[0]["PrecoPadrao"].ToString();
+            txtPesoUnitario.Text = rsInsumo.Rows[0]["PesoUnitario"].ToString();
             cmbUnidade.SelectedValue = rsInsumo.Rows[0]["IdUnidadeConsumo"].ToString();
             cmbTipoInsumo.SelectedValue = Convert.ToInt32(rsInsumo.Rows[0]["IdTipoInsumo"].ToString());
         }
@@ -105,6 +106,7 @@ namespace CamadaAplicacao
             txtNome.Text = string.Empty;
             txtDescricao.Text = string.Empty;
             txtPreco.Text = string.Empty;
+            txtPesoUnitario.Text = string.Empty;
             cmbUnidade.SelectedItem = null;
             cmbTipoInsumo.SelectedItem = null;
             txtCalorias.Text = string.Empty;
@@ -145,6 +147,7 @@ namespace CamadaAplicacao
             txtNome.ReadOnly = !Opcao;
             txtDescricao.ReadOnly = !Opcao;
             txtPreco.ReadOnly = !Opcao;
+            txtPesoUnitario.ReadOnly = !Opcao;
             cmbTipoInsumo.Enabled = Opcao;
             cmbUnidade.Enabled = Opcao;
           
@@ -208,25 +211,23 @@ namespace CamadaAplicacao
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
+            string Nome= txtNome.Text;
+            string Descricao= txtDescricao.Text;
+            char FeitoComprado= 'C';
+            double PrecoPadrao = double.Parse(txtPreco.Text == string.Empty ? "0" : txtPreco.Text);
+            double PesoUnitario = double.Parse(txtPesoUnitario.Text == string.Empty ? "0" : txtPesoUnitario.Text);
+            int Unidade = int.Parse(cmbUnidade.SelectedValue.ToString());
+            int TipoInsumo = int.Parse(cmbTipoInsumo.SelectedValue.ToString());
 
             if (bolNovo)
             {
-                NInsumos.Inserir(txtNome.Text,
-                    txtDescricao.Text,
-                    'C',
-                    double.Parse(txtPreco.Text==string.Empty?"0": txtPreco.Text),
-                    int.Parse(cmbUnidade.SelectedValue.ToString()), 
-                    int.Parse(cmbTipoInsumo.SelectedValue.ToString()));
+                NInsumos.Inserir(Nome,Descricao,FeitoComprado,PrecoPadrao,PesoUnitario,Unidade, TipoInsumo);
             }
             else
             {
-                NInsumos.Editar(int.Parse( txtIdInsumo.Text),
-                    txtNome.Text,
-                    txtDescricao.Text,
-                    'C',
-                    double.Parse(txtPreco.Text == string.Empty ? "0" : txtPreco.Text),
-                    int.Parse(cmbUnidade.SelectedValue.ToString()),
-                    int.Parse(cmbTipoInsumo.SelectedValue.ToString()));
+                int IdInsumo = int.Parse(txtIdInsumo.Text);
+
+                NInsumos.Editar(IdInsumo, Nome, Descricao, FeitoComprado, PrecoPadrao, PesoUnitario, Unidade, TipoInsumo);
             }
             CarregarInsumosFiltrado();
             bolNovo = false;

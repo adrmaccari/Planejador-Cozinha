@@ -16,6 +16,7 @@ namespace CamadaDados
         public string Descricao { get; set; }
         public char FeitoComprado { get; set; }
         public double PrecoPadrao { get; set; }
+        public double PesoUnitario { get; set; }
         public int IdUnidadeConsumo { get; set; }
         public double RendimentoReceita { get; set; }
 
@@ -23,13 +24,14 @@ namespace CamadaDados
         {
         }
 
-        public DPreparo(int idInsumo, string nome, string descricao, char feitoComprado, double precoPadrao, int idUnidadeConsumo, double rendimentoReceita)
+        public DPreparo(int idInsumo, string nome, string descricao, char feitoComprado, double precoPadrao, double pesoUnitario, int idUnidadeConsumo, double rendimentoReceita)
         {
             IdInsumo = idInsumo;
             Nome = nome;
             Descricao = descricao;
             FeitoComprado = feitoComprado;
             PrecoPadrao = precoPadrao;
+            PesoUnitario = pesoUnitario;
             IdUnidadeConsumo = idUnidadeConsumo;
             RendimentoReceita = rendimentoReceita;
         }
@@ -77,6 +79,13 @@ namespace CamadaDados
                 prmPrecoPadrao.SqlDbType = SqlDbType.Decimal;
                 prmPrecoPadrao.Value = insumo.PrecoPadrao;
 
+                SqlParameter prmPesoUnitario = new SqlParameter();
+                prmPesoUnitario.ParameterName = "@PesoUnitario";
+                prmPesoUnitario.SqlDbType = SqlDbType.Decimal;
+                prmPesoUnitario.Scale = 4;
+                prmPesoUnitario.Precision = 10;
+                prmPesoUnitario.Value = insumo.PesoUnitario;
+
                 SqlParameter prmRendimentoReceita = new SqlParameter();
                 prmRendimentoReceita.ParameterName = "@RendimentoReceita";
                 prmRendimentoReceita.SqlDbType = SqlDbType.Decimal;
@@ -94,6 +103,7 @@ namespace CamadaDados
                 sqlComando.Parameters.Add(prmPrecoPadrao);
                 sqlComando.Parameters.Add(prmRendimentoReceita);
                 sqlComando.Parameters.Add(prmIdUnidadeConsumo);
+                sqlComando.Parameters.Add(prmPesoUnitario);
                 resp = sqlComando.ExecuteNonQuery() == 1 ? "Ok" : "Erro na execução da Stored Procedure";
 
             }
@@ -192,10 +202,13 @@ namespace CamadaDados
                 prmFeitoComprado.Size = 1;
                 prmFeitoComprado.Value = insumo.FeitoComprado;
 
-                SqlParameter prmPrecoPadrao = new SqlParameter();
-                prmPrecoPadrao.ParameterName = "@PrecoPadrao";
-                prmPrecoPadrao.SqlDbType = SqlDbType.Decimal;
-                prmPrecoPadrao.Value = insumo.PrecoPadrao;
+
+                SqlParameter prmPesoUnitario = new SqlParameter();
+                prmPesoUnitario.ParameterName = "@PesoUnitario";
+                prmPesoUnitario.SqlDbType = SqlDbType.Decimal;
+                prmPesoUnitario.Scale = 4;
+                prmPesoUnitario.Precision = 10;
+                prmPesoUnitario.Value = insumo.PesoUnitario;
 
                 SqlParameter prmRendimentoReceita = new SqlParameter();
                 prmRendimentoReceita.ParameterName = "@RendimentoReceita";
@@ -213,7 +226,7 @@ namespace CamadaDados
                 sqlComando.Parameters.Add(prmNome);
                 sqlComando.Parameters.Add(prmDescricao);
                 sqlComando.Parameters.Add(prmFeitoComprado);
-                sqlComando.Parameters.Add(prmPrecoPadrao);
+                sqlComando.Parameters.Add(prmPesoUnitario);
                 sqlComando.Parameters.Add(prmRendimentoReceita);
                 sqlComando.Parameters.Add(prmIdUnidadeConsumo);
                 resp = sqlComando.ExecuteNonQuery() == 1 ? "Ok" : "Erro na execução da Stored Procedure";

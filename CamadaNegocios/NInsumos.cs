@@ -11,7 +11,7 @@ namespace CamadaNegocios
 {
     public class NInsumos
     {
-        public static string Inserir(string nome, string descricao, char feitoComprado, double precoPadrao,  int idUnidadeConsumo, int idTipoInsumo)
+        public static string Inserir(string nome, string descricao, char feitoComprado, double precoPadrao, double pesoUnitario,  int idUnidadeConsumo, int idTipoInsumo)
         {
             DInsumos Objeto = new DInsumos();
 
@@ -19,6 +19,7 @@ namespace CamadaNegocios
             Objeto.FeitoComprado = feitoComprado;
             Objeto.Descricao=descricao;
             Objeto.PrecoPadrao=precoPadrao;
+            Objeto.PesoUnitario = pesoUnitario;
             Objeto.IdTipoInsumo = idTipoInsumo;
             Objeto.IdUnidadeConsumo = idUnidadeConsumo;
             
@@ -34,7 +35,7 @@ namespace CamadaNegocios
             return Objeto.Excluir(Objeto);
         }
 
-        public static string Editar(int idinsumo, string nome, string descricao, char feitoComprado, double precoPadrao, int idUnidadeConsumo, int idTipoInsumo)
+        public static string Editar(int idinsumo, string nome, string descricao, char feitoComprado, double precoPadrao, double pesoUnitario, int idUnidadeConsumo, int idTipoInsumo)
         {
 
             DInsumos Objeto = new DInsumos();
@@ -44,6 +45,7 @@ namespace CamadaNegocios
             Objeto.FeitoComprado = feitoComprado;
             Objeto.Descricao = descricao;
             Objeto.PrecoPadrao = precoPadrao;
+            Objeto.PesoUnitario = pesoUnitario;
             Objeto.IdTipoInsumo = idTipoInsumo;
             Objeto.IdUnidadeConsumo = idUnidadeConsumo;
 

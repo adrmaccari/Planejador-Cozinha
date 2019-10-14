@@ -5,12 +5,13 @@ CREATE PROCEDURE sp_Insumos_criar_preparo
 	@Descricao	VARCHAR(256) ,
 	@FeitoComprado CHAR(1),
 	@PrecoPadrao DECIMAL(19,4),
+	@PesoUnitario DECIMAL (10,4),
 	@IdUnidadeConsumo INT,
 	@RendimentoReceita DECIMAL(19,4)
 
 AS
-	INSERT INTO Insumo (Nome, Descricao, FeitoComprado, PrecoPadrao, IdUnidadeConsumo)
-	VALUES (@Nome, @Descricao, @FeitoComprado, @PrecoPadrao, @IdUnidadeConsumo)
+	INSERT INTO Insumo (Nome, Descricao, FeitoComprado, PrecoPadrao, PesoUnitario, IdUnidadeConsumo)
+	VALUES (@Nome, @Descricao, @FeitoComprado, @PrecoPadrao,@PesoUnitario, @IdUnidadeConsumo)
 	SET @IdInsumo = SCOPE_IDENTITY()
 
 	INSERT INTO Preparo(IdInsumo,RendimentoReceita)
@@ -22,7 +23,7 @@ CREATE PROCEDURE sp_Insumos_editar_preparo
 	@Nome		VARCHAR(100),
 	@Descricao	VARCHAR(256) ,
 	@FeitoComprado CHAR(1),
-	@PrecoPadrao DECIMAL(19,4),
+	@PesoUnitario DECIMAL (10,4),
 	@RendimentoReceita DECIMAL(19,4),
 	@IdUnidadeConsumo INT
 AS
@@ -31,7 +32,7 @@ AS
 		Nome=			@Nome,
 		Descricao=		@Descricao, 
 		FeitoComprado=	@FeitoComprado,
-		PrecoPadrao=	@PrecoPadrao, 
+		PesoUnitario=	@PesoUnitario,
 		IdUnidadeConsumo=@IdUnidadeConsumo
 	WHERE IdInsumo = @IdInsumo
 

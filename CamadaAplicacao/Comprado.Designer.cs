@@ -36,10 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cmbUnidade = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtPreco = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txtIdInsumo = new System.Windows.Forms.TextBox();
@@ -71,10 +67,18 @@
             this.btEditar = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.txtPesoUnitario = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbUnidade = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtPreco = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupFonte.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbFiltroTipoInsumo
@@ -154,47 +158,11 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Descrição";
             // 
-            // cmbUnidade
-            // 
-            this.cmbUnidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbUnidade.FormattingEnabled = true;
-            this.cmbUnidade.Location = new System.Drawing.Point(14, 224);
-            this.cmbUnidade.Name = "cmbUnidade";
-            this.cmbUnidade.Size = new System.Drawing.Size(121, 24);
-            this.cmbUnidade.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 205);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 16);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Unidade";
-            // 
-            // txtPreco
-            // 
-            this.txtPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPreco.Location = new System.Drawing.Point(14, 287);
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(100, 22);
-            this.txtPreco.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(14, 271);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 16);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Preço Unitário";
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(34, 168);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -208,10 +176,6 @@
             this.tabPage1.Controls.Add(this.label16);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.txtNome);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.cmbUnidade);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.txtPreco);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.txtDescricao);
             this.tabPage1.Controls.Add(this.label15);
@@ -531,6 +495,76 @@
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.Silver;
+            this.tabPage3.Controls.Add(this.label6);
+            this.tabPage3.Controls.Add(this.cmbUnidade);
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Controls.Add(this.txtPreco);
+            this.tabPage3.Controls.Add(this.txtPesoUnitario);
+            this.tabPage3.Controls.Add(this.label17);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(638, 327);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Quantitativos";
+            // 
+            // txtPesoUnitario
+            // 
+            this.txtPesoUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesoUnitario.Location = new System.Drawing.Point(34, 179);
+            this.txtPesoUnitario.Name = "txtPesoUnitario";
+            this.txtPesoUnitario.Size = new System.Drawing.Size(100, 22);
+            this.txtPesoUnitario.TabIndex = 21;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(34, 156);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(89, 16);
+            this.label17.TabIndex = 20;
+            this.label17.Text = "Peso Unitário";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(37, 94);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(93, 16);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Preço Unitário";
+            // 
+            // cmbUnidade
+            // 
+            this.cmbUnidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbUnidade.FormattingEnabled = true;
+            this.cmbUnidade.Location = new System.Drawing.Point(37, 47);
+            this.cmbUnidade.Name = "cmbUnidade";
+            this.cmbUnidade.Size = new System.Drawing.Size(121, 24);
+            this.cmbUnidade.TabIndex = 22;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(37, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 16);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Unidade";
+            // 
+            // txtPreco
+            // 
+            this.txtPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPreco.Location = new System.Drawing.Point(37, 110);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(100, 22);
+            this.txtPreco.TabIndex = 23;
+            // 
             // frmComprado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -556,6 +590,8 @@
             this.tabPage2.PerformLayout();
             this.groupFonte.ResumeLayout(false);
             this.groupFonte.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -571,10 +607,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbUnidade;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPreco;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -606,6 +638,13 @@
         private System.Windows.Forms.ComboBox cmbTipoInsumo;
         private System.Windows.Forms.TextBox txtIdInsumo;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TextBox txtPesoUnitario;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbUnidade;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtPreco;
     }
 }
 

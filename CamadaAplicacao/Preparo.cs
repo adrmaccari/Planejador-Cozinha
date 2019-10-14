@@ -48,6 +48,7 @@ namespace CamadaAplicacao
             txtNome.Text = rsInsumo.Rows[0]["Nome"].ToString();
             txtDescricao.Text = rsInsumo.Rows[0]["Descricao"].ToString();
             txtPreco.Text = rsInsumo.Rows[0]["PrecoPadrao"].ToString();
+            txtPesoUnitario.Text = rsInsumo.Rows[0]["PesoUnitario"].ToString();
             cmbUnidade.SelectedValue = rsInsumo.Rows[0]["IdUnidadeConsumo"].ToString();
             txtRendimento.Text = rsInsumo.Rows[0]["RendimentoReceita"].ToString();
 
@@ -99,6 +100,7 @@ namespace CamadaAplicacao
             txtSodio.Text = string.Empty;
             txtFibras.Text = string.Empty;
             txtCarb.Text = string.Empty;
+            txtPesoUnitario.Text = string.Empty;
             txtPesoUnitario.Text = string.Empty;
             txtRendimento.Text = string.Empty;
         }
@@ -173,18 +175,19 @@ namespace CamadaAplicacao
             string Descricao = txtDescricao.Text;
             char FeitoComprado = 'F';
             double PrecoPadrao = double.Parse(txtPreco.Text == string.Empty ? "0" : txtPreco.Text);
+            double PesoUnitario = double.Parse(txtPesoUnitario.Text == string.Empty ? "0" : txtPesoUnitario.Text);
             int Unidade= int.Parse(cmbUnidade.SelectedValue.ToString());
             double Rendimento= double.Parse(txtRendimento.Text == string.Empty ? "0" : txtRendimento.Text);
 
             if (bolNovo)
             {
-                NPreparo.Inserir(Nome,Descricao,FeitoComprado,PrecoPadrao,Unidade,Rendimento);
+                NPreparo.Inserir(Nome,Descricao,FeitoComprado,PrecoPadrao, PesoUnitario,Unidade,Rendimento);
             }
             else
             {
                 int IdPreparo = int.Parse(txtIdInsumo.Text);
 
-                NPreparo.Editar(IdPreparo, Nome, Descricao, FeitoComprado, PrecoPadrao, Unidade, Rendimento);
+                NPreparo.Editar(IdPreparo, Nome, Descricao, FeitoComprado, PesoUnitario, Unidade, Rendimento);
             }
             CarregarPreparos();
             bolNovo = false;

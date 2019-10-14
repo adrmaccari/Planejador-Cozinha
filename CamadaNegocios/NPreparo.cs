@@ -10,7 +10,7 @@ namespace CamadaNegocios
 {
     public class NPreparo
     {
-        public static string Inserir(string nome, string descricao, char feitoComprado, double precoPadrao, int idUnidadeConsumo, double rendimentoReceita)
+        public static string Inserir(string nome, string descricao, char feitoComprado, double precoPadrao, double pesoUnitario, int idUnidadeConsumo, double rendimentoReceita)
         {
             DPreparo Objeto = new DPreparo();
 
@@ -18,6 +18,7 @@ namespace CamadaNegocios
             Objeto.FeitoComprado = feitoComprado;
             Objeto.Descricao = descricao;
             Objeto.PrecoPadrao = precoPadrao;
+            Objeto.PesoUnitario = pesoUnitario;
             Objeto.IdUnidadeConsumo = idUnidadeConsumo;
             Objeto.RendimentoReceita = rendimentoReceita;
 
@@ -33,7 +34,7 @@ namespace CamadaNegocios
             return Objeto.Excluir(Objeto);
         }
 
-        public static string Editar(int idinsumo, string nome, string descricao, char feitoComprado, double precoPadrao, int idUnidadeConsumo, double rendimentoReceita)
+        public static string Editar(int idinsumo, string nome, string descricao, char feitoComprado, double pesoUnitario, int idUnidadeConsumo, double rendimentoReceita)
         {
 
             DPreparo Objeto = new DPreparo();
@@ -42,7 +43,7 @@ namespace CamadaNegocios
             Objeto.Nome = nome;
             Objeto.FeitoComprado = feitoComprado;
             Objeto.Descricao = descricao;
-            Objeto.PrecoPadrao = precoPadrao;
+            Objeto.PesoUnitario = pesoUnitario;
             Objeto.IdUnidadeConsumo = idUnidadeConsumo;
             Objeto.RendimentoReceita = rendimentoReceita;
 
