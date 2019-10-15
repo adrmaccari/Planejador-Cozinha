@@ -51,7 +51,12 @@ namespace CamadaAplicacao
             txtPesoUnitario.Text = rsInsumo.Rows[0]["PesoUnitario"].ToString();
             cmbUnidade.SelectedValue = rsInsumo.Rows[0]["IdUnidadeConsumo"].ToString();
             txtRendimento.Text = rsInsumo.Rows[0]["RendimentoReceita"].ToString();
-
+            txtCalorias.Text = rsInsumo.Rows[0]["NutriCaloria"].ToString();
+            txtProteinas.Text = rsInsumo.Rows[0]["NutriProteina"].ToString();
+            txtLipidios.Text = rsInsumo.Rows[0]["NutriLipidio"].ToString();
+            txtSodio.Text = rsInsumo.Rows[0]["NutriSodio"].ToString();
+            txtFibras.Text = rsInsumo.Rows[0]["NutriFibra"].ToString();
+            txtCarb.Text = rsInsumo.Rows[0]["NutriCarb"].ToString();
             CarregarFichaTecnica();
         }
 
@@ -129,18 +134,10 @@ namespace CamadaAplicacao
             //Objetos da primeira tab:  DADOS GERAIS
             txtNome.ReadOnly = !Opcao;
             txtDescricao.ReadOnly = !Opcao;
-            txtPreco.ReadOnly = !Opcao;
             txtPesoUnitario.ReadOnly = !Opcao;
             txtRendimento.ReadOnly = !Opcao;
             cmbUnidade.Enabled = Opcao;
 
-            //Objetos da tab:  DADOS NUTRICIONAIS
-            txtCalorias.ReadOnly = !Opcao;
-            txtProteinas.ReadOnly = !Opcao;
-            txtLipidios.ReadOnly = !Opcao;
-            txtFibras.ReadOnly = !Opcao;
-            txtSodio.ReadOnly = !Opcao;
-            txtSodio.ReadOnly = !Opcao;
         }
 
 
@@ -159,6 +156,7 @@ namespace CamadaAplicacao
             bolNovo = true;
             bolPreparoCarregado = false;
             AtivarModoEdicao(true);
+            tabPreparo.SelectedIndex = 0;
         }
 
         private void cmbPreparos_SelectionChangeCommitted(object sender, EventArgs e)
@@ -167,6 +165,7 @@ namespace CamadaAplicacao
             PrencherDadosPreparo();
             bolPreparoCarregado = true;
             AtivarModoEdicao(false);
+            tabPreparo.SelectedIndex = 0;
         }
 
         private void btSalvar_Click(object sender, EventArgs e)
@@ -174,25 +173,27 @@ namespace CamadaAplicacao
             string Nome = txtNome.Text;
             string Descricao = txtDescricao.Text;
             char FeitoComprado = 'F';
-            double PrecoPadrao = double.Parse(txtPreco.Text == string.Empty ? "0" : txtPreco.Text);
             double PesoUnitario = double.Parse(txtPesoUnitario.Text == string.Empty ? "0" : txtPesoUnitario.Text);
             int Unidade= int.Parse(cmbUnidade.SelectedValue.ToString());
             double Rendimento= double.Parse(txtRendimento.Text == string.Empty ? "0" : txtRendimento.Text);
 
             if (bolNovo)
             {
-                NPreparo.Inserir(Nome,Descricao,FeitoComprado,PrecoPadrao, PesoUnitario,Unidade,Rendimento);
+                NPreparo.Inserir(Nome,Descricao,FeitoComprado, PesoUnitario,Unidade,Rendimento);
             }
             else
             {
                 int IdPreparo = int.Parse(txtIdInsumo.Text);
 
                 NPreparo.Editar(IdPreparo, Nome, Descricao, FeitoComprado, PesoUnitario, Unidade, Rendimento);
+                NPreparo.TotalizarFT(IdPreparo);
             }
             CarregarPreparos();
             bolNovo = false;
-            bolPreparoCarregado= true;
+            bolPreparoCarregado= false;
+            LimparCampos();
             AtivarModoEdicao(false);
+            tabPreparo.SelectedIndex = 0;
         }
 
         private void btEditar_Click(object sender, EventArgs e)
@@ -221,16 +222,33 @@ namespace CamadaAplicacao
             bolNovo = false;
             LimparCampos();
             AtivarModoEdicao(false);
+            tabPreparo.SelectedIndex = 0;
         }
 
         private void btFichaTecnica_Click(object sender, EventArgs e)
         {
+            int IdPreparo = int.Parse(txtIdInsumo.Text);
+
             if (bolPreparoCarregado)
             {
-                FichaTecnica NovaReceita = new FichaTecnica(int.Parse(txtIdInsumo.Text), txtNome.Text, int.Parse(cmbUnidade.SelectedValue.ToString()), double.Parse(txtRendimento.Text));
+                FichaTecnica NovaReceita = new FichaTecnica(IdPreparo, txtNome.Text, int.Parse(cmbUnidade.SelectedValue.ToString()), double.Parse(txtRendimento.Text));
                 NovaReceita.ShowDialog();
+                NPreparo.TotalizarFT(IdPreparo);
                 CarregarFichaTecnica();
+                PrencherDadosPreparo();
+            }
+            else
+            {
+                if (bolNovo)
+                {
+                    MessageBox.Show("Necessário salvar o Preparo antes de editar a Ficha Técnica");
+                }
+                else
+                {
+                    MessageBox.Show("Carregar um Preparo  para poder editar a Ficha Ténica");
+                }
             }
         }
+
     }
 }

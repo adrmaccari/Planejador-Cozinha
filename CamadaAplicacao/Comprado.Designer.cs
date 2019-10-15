@@ -36,7 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabComprado = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txtIdInsumo = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -62,19 +62,19 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtCalorias = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbUnidade = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtPreco = new System.Windows.Forms.TextBox();
+            this.txtPesoUnitario = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.btIncluir = new System.Windows.Forms.Button();
             this.btExcluir = new System.Windows.Forms.Button();
             this.btEditar = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.txtPesoUnitario = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cmbUnidade = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtPreco = new System.Windows.Forms.TextBox();
-            this.tabControl1.SuspendLayout();
+            this.tabComprado.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupFonte.SuspendLayout();
@@ -158,16 +158,16 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Descrição";
             // 
-            // tabControl1
+            // tabComprado
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(34, 168);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(646, 353);
-            this.tabControl1.TabIndex = 14;
+            this.tabComprado.Controls.Add(this.tabPage1);
+            this.tabComprado.Controls.Add(this.tabPage2);
+            this.tabComprado.Controls.Add(this.tabPage3);
+            this.tabComprado.Location = new System.Drawing.Point(34, 168);
+            this.tabComprado.Name = "tabComprado";
+            this.tabComprado.SelectedIndex = 0;
+            this.tabComprado.Size = new System.Drawing.Size(646, 353);
+            this.tabComprado.TabIndex = 14;
             // 
             // tabPage1
             // 
@@ -440,6 +440,76 @@
             this.label7.Text = "Calorias";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.Silver;
+            this.tabPage3.Controls.Add(this.label6);
+            this.tabPage3.Controls.Add(this.cmbUnidade);
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Controls.Add(this.txtPreco);
+            this.tabPage3.Controls.Add(this.txtPesoUnitario);
+            this.tabPage3.Controls.Add(this.label17);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(638, 327);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Quantitativos";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(37, 94);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(93, 16);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Preço Unitário";
+            // 
+            // cmbUnidade
+            // 
+            this.cmbUnidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbUnidade.FormattingEnabled = true;
+            this.cmbUnidade.Location = new System.Drawing.Point(37, 47);
+            this.cmbUnidade.Name = "cmbUnidade";
+            this.cmbUnidade.Size = new System.Drawing.Size(121, 24);
+            this.cmbUnidade.TabIndex = 22;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(37, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 16);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Unidade";
+            // 
+            // txtPreco
+            // 
+            this.txtPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPreco.Location = new System.Drawing.Point(37, 110);
+            this.txtPreco.Name = "txtPreco";
+            this.txtPreco.Size = new System.Drawing.Size(100, 22);
+            this.txtPreco.TabIndex = 23;
+            // 
+            // txtPesoUnitario
+            // 
+            this.txtPesoUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesoUnitario.Location = new System.Drawing.Point(34, 179);
+            this.txtPesoUnitario.Name = "txtPesoUnitario";
+            this.txtPesoUnitario.Size = new System.Drawing.Size(100, 22);
+            this.txtPesoUnitario.TabIndex = 21;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(34, 156);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(148, 16);
+            this.label17.TabIndex = 20;
+            this.label17.Text = "Peso Unitário (Gramas)";
+            // 
             // btIncluir
             // 
             this.btIncluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -495,76 +565,6 @@
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.Silver;
-            this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Controls.Add(this.cmbUnidade);
-            this.tabPage3.Controls.Add(this.label5);
-            this.tabPage3.Controls.Add(this.txtPreco);
-            this.tabPage3.Controls.Add(this.txtPesoUnitario);
-            this.tabPage3.Controls.Add(this.label17);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(638, 327);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Quantitativos";
-            // 
-            // txtPesoUnitario
-            // 
-            this.txtPesoUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesoUnitario.Location = new System.Drawing.Point(34, 179);
-            this.txtPesoUnitario.Name = "txtPesoUnitario";
-            this.txtPesoUnitario.Size = new System.Drawing.Size(100, 22);
-            this.txtPesoUnitario.TabIndex = 21;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(34, 156);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(89, 16);
-            this.label17.TabIndex = 20;
-            this.label17.Text = "Peso Unitário";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(37, 94);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 16);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Preço Unitário";
-            // 
-            // cmbUnidade
-            // 
-            this.cmbUnidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbUnidade.FormattingEnabled = true;
-            this.cmbUnidade.Location = new System.Drawing.Point(37, 47);
-            this.cmbUnidade.Name = "cmbUnidade";
-            this.cmbUnidade.Size = new System.Drawing.Size(121, 24);
-            this.cmbUnidade.TabIndex = 22;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(37, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 16);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Unidade";
-            // 
-            // txtPreco
-            // 
-            this.txtPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPreco.Location = new System.Drawing.Point(37, 110);
-            this.txtPreco.Name = "txtPreco";
-            this.txtPreco.Size = new System.Drawing.Size(100, 22);
-            this.txtPreco.TabIndex = 23;
-            // 
             // frmComprado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -575,7 +575,7 @@
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.btExcluir);
             this.Controls.Add(this.btIncluir);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabComprado);
             this.Controls.Add(this.cmbInsumos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -583,7 +583,7 @@
             this.Name = "frmComprado";
             this.Text = "Insumos";
             this.Load += new System.EventHandler(this.frmInsumos_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.tabComprado.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -607,7 +607,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabComprado;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btIncluir;

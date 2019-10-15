@@ -97,6 +97,8 @@ namespace CamadaAplicacao
             txtPesoUnitario.Text = rsInsumo.Rows[0]["PesoUnitario"].ToString();
             cmbUnidade.SelectedValue = rsInsumo.Rows[0]["IdUnidadeConsumo"].ToString();
             cmbTipoInsumo.SelectedValue = Convert.ToInt32(rsInsumo.Rows[0]["IdTipoInsumo"].ToString());
+
+            tabComprado.SelectedIndex = 0;
         }
 
         //----- LIMPA todos os campos da tab DADOS GERAIS e DADOS NUTRICIONAIS

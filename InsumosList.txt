@@ -1,0 +1,4 @@
+Abacate;1,76;KG;Frutas
+Laranja;2,56;KG;Frutas
+Cebola;3,46;KG;Verduras
+Alho;10,45;GR;Temperos

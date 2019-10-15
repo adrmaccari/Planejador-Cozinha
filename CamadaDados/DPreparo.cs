@@ -15,7 +15,6 @@ namespace CamadaDados
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public char FeitoComprado { get; set; }
-        public double PrecoPadrao { get; set; }
         public double PesoUnitario { get; set; }
         public int IdUnidadeConsumo { get; set; }
         public double RendimentoReceita { get; set; }
@@ -24,13 +23,12 @@ namespace CamadaDados
         {
         }
 
-        public DPreparo(int idInsumo, string nome, string descricao, char feitoComprado, double precoPadrao, double pesoUnitario, int idUnidadeConsumo, double rendimentoReceita)
+        public DPreparo(int idInsumo, string nome, string descricao, char feitoComprado,  double pesoUnitario, int idUnidadeConsumo, double rendimentoReceita)
         {
             IdInsumo = idInsumo;
             Nome = nome;
             Descricao = descricao;
             FeitoComprado = feitoComprado;
-            PrecoPadrao = precoPadrao;
             PesoUnitario = pesoUnitario;
             IdUnidadeConsumo = idUnidadeConsumo;
             RendimentoReceita = rendimentoReceita;
@@ -74,10 +72,6 @@ namespace CamadaDados
                 prmFeitoComprado.Size = 1;
                 prmFeitoComprado.Value = 'F';
 
-                SqlParameter prmPrecoPadrao = new SqlParameter();
-                prmPrecoPadrao.ParameterName = "@PrecoPadrao";
-                prmPrecoPadrao.SqlDbType = SqlDbType.Decimal;
-                prmPrecoPadrao.Value = insumo.PrecoPadrao;
 
                 SqlParameter prmPesoUnitario = new SqlParameter();
                 prmPesoUnitario.ParameterName = "@PesoUnitario";
@@ -100,7 +94,6 @@ namespace CamadaDados
                 sqlComando.Parameters.Add(prmNome);
                 sqlComando.Parameters.Add(prmDescricao);
                 sqlComando.Parameters.Add(prmFeitoComprado);
-                sqlComando.Parameters.Add(prmPrecoPadrao);
                 sqlComando.Parameters.Add(prmRendimentoReceita);
                 sqlComando.Parameters.Add(prmIdUnidadeConsumo);
                 sqlComando.Parameters.Add(prmPesoUnitario);
@@ -371,6 +364,47 @@ namespace CamadaDados
                 }
             }
             return rsInsumos;
+        }
+
+        public void TotalizarFT(int idPreparo)
+        {
+            SqlConnection Conexao = new SqlConnection();
+            DataTable rsItens = new DataTable();
+
+            try
+            {
+                //  Abrir a conexão
+                Conexao.ConnectionString = DConexao.strConexao;
+                Conexao.Open();
+
+                //criar o comando
+                SqlCommand sqlComando = new SqlCommand();
+                sqlComando.Connection = Conexao;
+                sqlComando.CommandText = "sp_Insumos_atualizar_totaisFT";
+                sqlComando.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter prmIdPreparo = new SqlParameter();
+                prmIdPreparo.ParameterName = "@IdPreparo";
+                prmIdPreparo.SqlDbType = SqlDbType.Int;
+                prmIdPreparo.Value = idPreparo;
+
+                sqlComando.Parameters.Add(prmIdPreparo);
+
+                // executa o comando e guarda os resultados em um SqlDataAdapter
+                sqlComando.ExecuteNonQuery();             
+            }
+            catch (Exception Erro)
+            {
+                MessageBox.Show(Erro.Message);
+                throw;
+            }
+            finally
+            {
+                if (Conexao.State == ConnectionState.Open)
+                {
+                    Conexao.Close();
+                }
+            }
         }
     }
 }

@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
             this.btEditar = new System.Windows.Forms.Button();
             this.btExcluir = new System.Windows.Forms.Button();
             this.btIncluir = new System.Windows.Forms.Button();
-            this.tabFichaTecnica = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPreparo = new System.Windows.Forms.TabControl();
+            this.tabDadosGerais = new System.Windows.Forms.TabPage();
             this.txtIdInsumo = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -69,8 +69,8 @@
             this.gridFichaTecnica = new System.Windows.Forms.DataGridView();
             this.cmbPreparos = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tabFichaTecnica.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabPreparo.SuspendLayout();
+            this.tabDadosGerais.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -132,33 +132,33 @@
             this.btIncluir.UseVisualStyleBackColor = true;
             this.btIncluir.Click += new System.EventHandler(this.btIncluir_Click);
             // 
-            // tabFichaTecnica
+            // tabPreparo
             // 
-            this.tabFichaTecnica.Controls.Add(this.tabPage1);
-            this.tabFichaTecnica.Controls.Add(this.tabPage2);
-            this.tabFichaTecnica.Controls.Add(this.tabPage3);
-            this.tabFichaTecnica.Controls.Add(this.tabPage4);
-            this.tabFichaTecnica.Location = new System.Drawing.Point(33, 158);
-            this.tabFichaTecnica.Name = "tabFichaTecnica";
-            this.tabFichaTecnica.SelectedIndex = 0;
-            this.tabFichaTecnica.Size = new System.Drawing.Size(646, 353);
-            this.tabFichaTecnica.TabIndex = 20;
+            this.tabPreparo.Controls.Add(this.tabDadosGerais);
+            this.tabPreparo.Controls.Add(this.tabPage2);
+            this.tabPreparo.Controls.Add(this.tabPage3);
+            this.tabPreparo.Controls.Add(this.tabPage4);
+            this.tabPreparo.Location = new System.Drawing.Point(33, 158);
+            this.tabPreparo.Name = "tabPreparo";
+            this.tabPreparo.SelectedIndex = 0;
+            this.tabPreparo.Size = new System.Drawing.Size(646, 353);
+            this.tabPreparo.TabIndex = 20;
             // 
-            // tabPage1
+            // tabDadosGerais
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.Silver;
-            this.tabPage1.Controls.Add(this.txtIdInsumo);
-            this.tabPage1.Controls.Add(this.label16);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.txtNome);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.txtDescricao);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(638, 327);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Dados Gerais";
+            this.tabDadosGerais.BackColor = System.Drawing.Color.Silver;
+            this.tabDadosGerais.Controls.Add(this.txtIdInsumo);
+            this.tabDadosGerais.Controls.Add(this.label16);
+            this.tabDadosGerais.Controls.Add(this.label3);
+            this.tabDadosGerais.Controls.Add(this.txtNome);
+            this.tabDadosGerais.Controls.Add(this.label4);
+            this.tabDadosGerais.Controls.Add(this.txtDescricao);
+            this.tabDadosGerais.Location = new System.Drawing.Point(4, 22);
+            this.tabDadosGerais.Name = "tabDadosGerais";
+            this.tabDadosGerais.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDadosGerais.Size = new System.Drawing.Size(638, 327);
+            this.tabDadosGerais.TabIndex = 0;
+            this.tabDadosGerais.Text = "Dados Gerais";
             // 
             // txtIdInsumo
             // 
@@ -243,6 +243,7 @@
             this.txtFibras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFibras.Location = new System.Drawing.Point(191, 276);
             this.txtFibras.Name = "txtFibras";
+            this.txtFibras.ReadOnly = true;
             this.txtFibras.Size = new System.Drawing.Size(100, 22);
             this.txtFibras.TabIndex = 1;
             // 
@@ -262,6 +263,7 @@
             this.txtCarb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCarb.Location = new System.Drawing.Point(191, 226);
             this.txtCarb.Name = "txtCarb";
+            this.txtCarb.ReadOnly = true;
             this.txtCarb.Size = new System.Drawing.Size(100, 22);
             this.txtCarb.TabIndex = 1;
             // 
@@ -281,6 +283,7 @@
             this.txtSodio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSodio.Location = new System.Drawing.Point(191, 178);
             this.txtSodio.Name = "txtSodio";
+            this.txtSodio.ReadOnly = true;
             this.txtSodio.Size = new System.Drawing.Size(100, 22);
             this.txtSodio.TabIndex = 1;
             // 
@@ -300,6 +303,7 @@
             this.txtLipidios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLipidios.Location = new System.Drawing.Point(191, 130);
             this.txtLipidios.Name = "txtLipidios";
+            this.txtLipidios.ReadOnly = true;
             this.txtLipidios.Size = new System.Drawing.Size(100, 22);
             this.txtLipidios.TabIndex = 1;
             // 
@@ -319,6 +323,7 @@
             this.txtProteinas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProteinas.Location = new System.Drawing.Point(191, 84);
             this.txtProteinas.Name = "txtProteinas";
+            this.txtProteinas.ReadOnly = true;
             this.txtProteinas.Size = new System.Drawing.Size(100, 22);
             this.txtProteinas.TabIndex = 1;
             // 
@@ -338,6 +343,7 @@
             this.txtCalorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCalorias.Location = new System.Drawing.Point(191, 38);
             this.txtCalorias.Name = "txtCalorias";
+            this.txtCalorias.ReadOnly = true;
             this.txtCalorias.Size = new System.Drawing.Size(100, 22);
             this.txtCalorias.TabIndex = 1;
             // 
@@ -401,9 +407,9 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(41, 93);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(89, 16);
+            this.label13.Size = new System.Drawing.Size(148, 16);
             this.label13.TabIndex = 17;
-            this.label13.Text = "Peso Unitário";
+            this.label13.Text = "Peso Unitário (Gramas)";
             // 
             // label6
             // 
@@ -439,6 +445,7 @@
             this.txtPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPreco.Location = new System.Drawing.Point(41, 178);
             this.txtPreco.Name = "txtPreco";
+            this.txtPreco.ReadOnly = true;
             this.txtPreco.Size = new System.Drawing.Size(100, 22);
             this.txtPreco.TabIndex = 14;
             // 
@@ -471,14 +478,14 @@
             this.gridFichaTecnica.AllowUserToDeleteRows = false;
             this.gridFichaTecnica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gridFichaTecnica.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridFichaTecnica.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridFichaTecnica.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gridFichaTecnica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridFichaTecnica.EnableHeadersVisualStyles = false;
             this.gridFichaTecnica.Location = new System.Drawing.Point(16, 62);
@@ -519,15 +526,15 @@
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.btExcluir);
             this.Controls.Add(this.btIncluir);
-            this.Controls.Add(this.tabFichaTecnica);
+            this.Controls.Add(this.tabPreparo);
             this.Controls.Add(this.cmbPreparos);
             this.Controls.Add(this.label2);
             this.Name = "frmPreparo";
             this.Text = "Preparo";
             this.Load += new System.EventHandler(this.frmPreparo_Load);
-            this.tabFichaTecnica.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabPreparo.ResumeLayout(false);
+            this.tabDadosGerais.ResumeLayout(false);
+            this.tabDadosGerais.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -546,8 +553,8 @@
         private System.Windows.Forms.Button btEditar;
         private System.Windows.Forms.Button btExcluir;
         private System.Windows.Forms.Button btIncluir;
-        private System.Windows.Forms.TabControl tabFichaTecnica;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl tabPreparo;
+        private System.Windows.Forms.TabPage tabDadosGerais;
         private System.Windows.Forms.TextBox txtIdInsumo;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label3;
