@@ -72,6 +72,7 @@
     </Compile>
     <Compile Include="NFichaTecnica.cs" />
     <Compile Include="NInsumos.cs" />
+    <Compile Include="NTabelaNutricional.cs" />
     <Compile Include="NTipoInsumo.cs" />
     <Compile Include="NUnidadeConsumo.cs" />
     <Compile Include="NPreparo.cs" />

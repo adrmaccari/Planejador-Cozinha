@@ -49,3 +49,20 @@ CONSTRAINT Pk_PreparoInsumo PRIMARY KEY (IdPreparo,IdInsumo),
 CONSTRAINT Pk_Parent FOREIGN KEY (IdPreparo) REFERENCES Preparo,
 CONSTRAINT Pk_Child FOREIGN KEY (IdInsumo) REFERENCES Insumo
 )
+
+
+CREATE TABLE TabelaNutricional(
+IdTabelaNutricional INT PRIMARY KEY NOT NULL,
+Nome VARCHAR(100) NOT NULL,
+Fonte CHAR(1),
+FonteDetalhe VARCHAR(100),
+Observacao VARCHAR (250),
+NumeroTACO INT,
+PesoAmostra INT,
+Caloria DECIMAL(10,4),
+Proteina DECIMAL(10,4),
+Lipidio DECIMAL(10,4),
+Fibra DECIMAL(10,4),
+Sodio DECIMAL(10,4),
+Carb DECIMAL(10,4)
+)
