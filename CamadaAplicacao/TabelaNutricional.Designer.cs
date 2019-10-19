@@ -31,6 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtBusca = new System.Windows.Forms.TextBox();
             this.gridItensTabela = new System.Windows.Forms.DataGridView();
+            this.Coluna1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Coluna2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Coluna3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCalorias = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtProteinas = new System.Windows.Forms.TextBox();
@@ -44,6 +47,8 @@
             this.txtCarb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNumeroTACO = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.radManual = new System.Windows.Forms.RadioButton();
             this.radTACO = new System.Windows.Forms.RadioButton();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -54,8 +59,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtNumeroTACO = new System.Windows.Forms.TextBox();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
             this.btEditar = new System.Windows.Forms.Button();
@@ -82,17 +85,50 @@
             this.txtBusca.Name = "txtBusca";
             this.txtBusca.Size = new System.Drawing.Size(378, 22);
             this.txtBusca.TabIndex = 1;
+            this.txtBusca.TextChanged += new System.EventHandler(this.txtBusca_TextChanged);
             // 
             // gridItensTabela
             // 
             this.gridItensTabela.AllowUserToAddRows = false;
             this.gridItensTabela.AllowUserToDeleteRows = false;
+            this.gridItensTabela.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gridItensTabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridItensTabela.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Coluna1,
+            this.Coluna2,
+            this.Coluna3});
             this.gridItensTabela.Location = new System.Drawing.Point(119, 87);
+            this.gridItensTabela.MultiSelect = false;
             this.gridItensTabela.Name = "gridItensTabela";
             this.gridItensTabela.ReadOnly = true;
+            this.gridItensTabela.RowHeadersVisible = false;
+            this.gridItensTabela.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridItensTabela.Size = new System.Drawing.Size(671, 128);
             this.gridItensTabela.TabIndex = 2;
+            this.gridItensTabela.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridItensTabela_CellClick);
+            this.gridItensTabela.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridItensTabela_CellContentClick);
+            this.gridItensTabela.SelectionChanged += new System.EventHandler(this.gridItensTabela_SelectionChanged);
+            // 
+            // Coluna1
+            // 
+            this.Coluna1.HeaderText = "ID Item";
+            this.Coluna1.Name = "Coluna1";
+            this.Coluna1.ReadOnly = true;
+            this.Coluna1.Width = 66;
+            // 
+            // Coluna2
+            // 
+            this.Coluna2.HeaderText = "Nome Item";
+            this.Coluna2.Name = "Coluna2";
+            this.Coluna2.ReadOnly = true;
+            this.Coluna2.Width = 83;
+            // 
+            // Coluna3
+            // 
+            this.Coluna3.HeaderText = "Observação";
+            this.Coluna3.Name = "Coluna3";
+            this.Coluna3.ReadOnly = true;
+            this.Coluna3.Width = 90;
             // 
             // txtCalorias
             // 
@@ -100,7 +136,7 @@
             this.txtCalorias.Location = new System.Drawing.Point(650, 389);
             this.txtCalorias.Name = "txtCalorias";
             this.txtCalorias.Size = new System.Drawing.Size(140, 22);
-            this.txtCalorias.TabIndex = 3;
+            this.txtCalorias.TabIndex = 4;
             // 
             // label2
             // 
@@ -118,7 +154,7 @@
             this.txtProteinas.Location = new System.Drawing.Point(650, 435);
             this.txtProteinas.Name = "txtProteinas";
             this.txtProteinas.Size = new System.Drawing.Size(140, 22);
-            this.txtProteinas.TabIndex = 3;
+            this.txtProteinas.TabIndex = 5;
             // 
             // label3
             // 
@@ -136,7 +172,7 @@
             this.txtLipidios.Location = new System.Drawing.Point(650, 480);
             this.txtLipidios.Name = "txtLipidios";
             this.txtLipidios.Size = new System.Drawing.Size(140, 22);
-            this.txtLipidios.TabIndex = 3;
+            this.txtLipidios.TabIndex = 6;
             // 
             // label4
             // 
@@ -154,7 +190,7 @@
             this.txtSodio.Location = new System.Drawing.Point(650, 526);
             this.txtSodio.Name = "txtSodio";
             this.txtSodio.Size = new System.Drawing.Size(140, 22);
-            this.txtSodio.TabIndex = 3;
+            this.txtSodio.TabIndex = 7;
             // 
             // label5
             // 
@@ -172,7 +208,7 @@
             this.txtFibra.Location = new System.Drawing.Point(650, 572);
             this.txtFibra.Name = "txtFibra";
             this.txtFibra.Size = new System.Drawing.Size(140, 22);
-            this.txtFibra.TabIndex = 3;
+            this.txtFibra.TabIndex = 8;
             // 
             // label6
             // 
@@ -190,7 +226,7 @@
             this.txtCarb.Location = new System.Drawing.Point(650, 615);
             this.txtCarb.Name = "txtCarb";
             this.txtCarb.Size = new System.Drawing.Size(140, 22);
-            this.txtCarb.TabIndex = 3;
+            this.txtCarb.TabIndex = 9;
             // 
             // label7
             // 
@@ -208,6 +244,7 @@
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.radManual);
             this.groupBox1.Controls.Add(this.radTACO);
+            this.groupBox1.Enabled = false;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(123, 411);
             this.groupBox1.Name = "groupBox1";
@@ -215,6 +252,23 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fonte";
+            // 
+            // txtNumeroTACO
+            // 
+            this.txtNumeroTACO.Enabled = false;
+            this.txtNumeroTACO.Location = new System.Drawing.Point(124, 40);
+            this.txtNumeroTACO.Name = "txtNumeroTACO";
+            this.txtNumeroTACO.Size = new System.Drawing.Size(130, 22);
+            this.txtNumeroTACO.TabIndex = 3;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(121, 18);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(96, 16);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Número TACO";
             // 
             // radManual
             // 
@@ -237,6 +291,7 @@
             this.radTACO.TabStop = true;
             this.radTACO.Text = "TACO";
             this.radTACO.UseVisualStyleBackColor = true;
+            this.radTACO.CheckedChanged += new System.EventHandler(this.radTACO_CheckedChanged);
             // 
             // txtNome
             // 
@@ -244,7 +299,7 @@
             this.txtNome.Location = new System.Drawing.Point(123, 266);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(667, 22);
-            this.txtNome.TabIndex = 6;
+            this.txtNome.TabIndex = 1;
             // 
             // label8
             // 
@@ -282,7 +337,7 @@
             this.txtPesoAmostra.Location = new System.Drawing.Point(650, 324);
             this.txtPesoAmostra.Name = "txtPesoAmostra";
             this.txtPesoAmostra.Size = new System.Drawing.Size(140, 22);
-            this.txtPesoAmostra.TabIndex = 6;
+            this.txtPesoAmostra.TabIndex = 3;
             // 
             // label10
             // 
@@ -302,7 +357,7 @@
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtObservacao.Size = new System.Drawing.Size(374, 57);
-            this.txtObservacao.TabIndex = 6;
+            this.txtObservacao.TabIndex = 2;
             // 
             // label11
             // 
@@ -314,29 +369,13 @@
             this.label11.TabIndex = 7;
             this.label11.Text = "Observação";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(121, 18);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(96, 16);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Número TACO";
-            // 
-            // txtNumeroTACO
-            // 
-            this.txtNumeroTACO.Location = new System.Drawing.Point(124, 40);
-            this.txtNumeroTACO.Name = "txtNumeroTACO";
-            this.txtNumeroTACO.Size = new System.Drawing.Size(130, 22);
-            this.txtNumeroTACO.TabIndex = 3;
-            // 
             // btCancelar
             // 
             this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancelar.Location = new System.Drawing.Point(871, 517);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(88, 44);
-            this.btCancelar.TabIndex = 16;
+            this.btCancelar.TabIndex = 11;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
             // 
@@ -346,9 +385,10 @@
             this.btSalvar.Location = new System.Drawing.Point(871, 456);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(88, 44);
-            this.btSalvar.TabIndex = 17;
+            this.btSalvar.TabIndex = 10;
             this.btSalvar.Text = "Salvar";
             this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // btEditar
             // 
@@ -356,9 +396,10 @@
             this.btEditar.Location = new System.Drawing.Point(871, 393);
             this.btEditar.Name = "btEditar";
             this.btEditar.Size = new System.Drawing.Size(88, 44);
-            this.btEditar.TabIndex = 18;
+            this.btEditar.TabIndex = 14;
             this.btEditar.Text = "Editar";
             this.btEditar.UseVisualStyleBackColor = true;
+            this.btEditar.Click += new System.EventHandler(this.btEditar_Click);
             // 
             // btExcluir
             // 
@@ -366,7 +407,7 @@
             this.btExcluir.Location = new System.Drawing.Point(871, 325);
             this.btExcluir.Name = "btExcluir";
             this.btExcluir.Size = new System.Drawing.Size(88, 44);
-            this.btExcluir.TabIndex = 19;
+            this.btExcluir.TabIndex = 13;
             this.btExcluir.Text = "Excluir";
             this.btExcluir.UseVisualStyleBackColor = true;
             // 
@@ -376,9 +417,10 @@
             this.btIncluir.Location = new System.Drawing.Point(871, 263);
             this.btIncluir.Name = "btIncluir";
             this.btIncluir.Size = new System.Drawing.Size(88, 44);
-            this.btIncluir.TabIndex = 20;
+            this.btIncluir.TabIndex = 12;
             this.btIncluir.Text = "Incluir";
             this.btIncluir.UseVisualStyleBackColor = true;
+            this.btIncluir.Click += new System.EventHandler(this.btIncluir_Click);
             // 
             // frmTabelaNutricional
             // 
@@ -460,5 +502,8 @@
         private System.Windows.Forms.Button btEditar;
         private System.Windows.Forms.Button btExcluir;
         private System.Windows.Forms.Button btIncluir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Coluna1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Coluna2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Coluna3;
     }
 }

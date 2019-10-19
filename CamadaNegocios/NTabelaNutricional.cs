@@ -11,7 +11,7 @@ namespace CamadaNegocios
 {
     public class NTabelaNutricional
     {
-        public static string Incluir(string nome, char fonte, string fonteDetalhe, string observacao, int numeroTACO, int pesoAmostra, double caloria, double proteina, double lipidio, double fibra, double sodio, double carb)
+        public static string Incluir(string nome, char fonte, string fonteDetalhe, string observacao, int pesoAmostra, double caloria, double proteina, double lipidio, double fibra, double sodio, double carb)
         {
             DTabelaNutricional ItemTabela = new DTabelaNutricional();
 
@@ -19,7 +19,6 @@ namespace CamadaNegocios
             ItemTabela.Fonte = fonte;
             ItemTabela.FonteDetalhe = fonteDetalhe;
             ItemTabela.Observacao = observacao;
-            ItemTabela.NumeroTACO = numeroTACO;
             ItemTabela.PesoAmostra = pesoAmostra;
             ItemTabela.Caloria = caloria;
             ItemTabela.Proteina = proteina;
@@ -31,7 +30,7 @@ namespace CamadaNegocios
             return ItemTabela.Criar(ItemTabela);
         }
 
-        public static string Editar(int idTabelaNutricional, string nome, char fonte, string fonteDetalhe, string observacao, int numeroTACO, int pesoAmostra, double caloria, double proteina, double lipidio, double fibra, double sodio, double carb)
+        public static string Editar(int idTabelaNutricional, string nome, char fonte, string fonteDetalhe, string observacao, int pesoAmostra, double caloria, double proteina, double lipidio, double fibra, double sodio, double carb)
         {
             DTabelaNutricional ItemTabela = new DTabelaNutricional();
 
@@ -40,7 +39,6 @@ namespace CamadaNegocios
             ItemTabela.Fonte = fonte;
             ItemTabela.FonteDetalhe = fonteDetalhe;
             ItemTabela.Observacao = observacao;
-            ItemTabela.NumeroTACO = numeroTACO;
             ItemTabela.PesoAmostra = pesoAmostra;
             ItemTabela.Caloria = caloria;
             ItemTabela.Proteina = proteina;

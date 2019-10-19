@@ -14,12 +14,13 @@ namespace CamadaAplicacao
 {
     public partial class frmTabelaNutricional : Form
     {
+        public bool bolNovo = false;
+        public int IdTabelaNutricional;
+
         public frmTabelaNutricional()
         {
             InitializeComponent();
         }
-
-
 
 
         //----- Preencher todos os campos com o Insumo escolhido na lista Insumos Filtrados
@@ -27,29 +28,31 @@ namespace CamadaAplicacao
         {
             DataTable rsItemTabela = new DataTable();
 
-            int IdTabelaNutricional = int.Parse(gridItensTabela.SelectedRows[0].Cells["IdTabelaNutricional"].Value.ToString());
+            this.IdTabelaNutricional= int.Parse(gridItensTabela.SelectedRows[0].Cells["Coluna1"].Value.ToString());
 
-            rsItemTabela = NTabelaNutricional.BuscarID(IdTabelaNutricional;
+            rsItemTabela = NTabelaNutricional.BuscarID(IdTabelaNutricional);
 
             txtNome.Text = rsItemTabela.Rows[0]["Nome"].ToString();
             txtObservacao.Text = rsItemTabela.Rows[0]["Observacao"].ToString();
-            txtFonteDetalhes.Text = rsItemTabela.Rows[0]["FonteDetalhes"].ToString();
-            txtNumeroTACO.Text = rsItemTabela.Rows[0]["PesoUnitario"].ToString();
-            txtPesoAmostra.Text = rsItemTabela.Rows[0]["PesoUnitario"].ToString();
-            txtCalorias.Text = rsItemTabela.Rows[0]["PesoUnitario"].ToString();
-            txtProteinas.Text = rsItemTabela.Rows[0]["PesoUnitario"].ToString();
-            txtLipidios.Text = rsItemTabela.Rows[0]["PesoUnitario"].ToString();
-            txtSodio.Text = rsItemTabela.Rows[0]["PesoUnitario"].ToString();
-            txtFibra.Text = rsItemTabela.Rows[0]["PesoUnitario"].ToString();
-            txtCarb.Text = rsItemTabela.Rows[0]["PesoUnitario"].ToString();
-            if (rsItemTabela.Rows[0]["Fonte"].ToString()='T')
+            txtFonteDetalhes.Text = rsItemTabela.Rows[0]["FonteDetalhe"].ToString();
+            txtNumeroTACO.Text = rsItemTabela.Rows[0]["NumeroTACO"].ToString();
+            txtPesoAmostra.Text = rsItemTabela.Rows[0]["PesoAmostra"].ToString();
+            txtCalorias.Text = rsItemTabela.Rows[0]["Caloria"].ToString();
+            txtProteinas.Text = rsItemTabela.Rows[0]["Proteina"].ToString();
+            txtLipidios.Text = rsItemTabela.Rows[0]["Lipidio"].ToString();
+            txtSodio.Text = rsItemTabela.Rows[0]["Sodio"].ToString();
+            txtFibra.Text = rsItemTabela.Rows[0]["Fibra"].ToString();
+            txtCarb.Text = rsItemTabela.Rows[0]["Carb"].ToString();
+            if (rsItemTabela.Rows[0]["Fonte"].ToString() == 'T'.ToString())
             {
-
+                radTACO.Select();
             }
-            txtPesoAmostra.Text = rsItemTabela.Rows[0]["PesoUnitario"].ToString();
+            else
+            {
+                radManual.Select();
+            }
+            txtPesoAmostra.Text = rsItemTabela.Rows[0]["PesoAmostra"].ToString();
 
-
-            tabComprado.SelectedIndex = 0;
         }
 
         //----- LIMPA todos os campos da tab DADOS GERAIS e DADOS NUTRICIONAIS
@@ -75,54 +78,121 @@ namespace CamadaAplicacao
         private void AtivarModoEdicao(Boolean Opcao)
         {
             //OBJETOS Gerais
-            if (!Opcao && bolInsumoCarregado)
-            {
-                btEditar.Enabled = true;
-                btExcluir.Enabled = true;
-            }
-            else
-            {
-                btEditar.Enabled = false;
-                btExcluir.Enabled = false;
-
-            }
             btIncluir.Enabled = !Opcao;
+            btExcluir.Enabled = !Opcao;
+            btEditar.Enabled = !Opcao;
             btSalvar.Enabled = Opcao;
             btCancelar.Enabled = Opcao;
-            cmbFiltroTipoInsumo.Enabled = !Opcao;
-            cmbInsumos.Enabled = !Opcao;
-
+            
             //Objetos da primeira tab:  DADOS GERAIS
             txtNome.ReadOnly = !Opcao;
-            txtDescricao.ReadOnly = !Opcao;
-            txtPreco.ReadOnly = !Opcao;
-            txtPesoUnitario.ReadOnly = !Opcao;
-            cmbTipoInsumo.Enabled = Opcao;
-            cmbUnidade.Enabled = Opcao;
+            txtObservacao.ReadOnly = !Opcao;
+            txtPesoAmostra.ReadOnly = !Opcao;
 
             //Objetos da primeira tab:  DADOS NUTRICIONAIS
-            txtNumeroTaco.ReadOnly = !Opcao;
-            txtFonte.ReadOnly = !Opcao;
+            txtNumeroTACO.ReadOnly = !Opcao;
             txtCalorias.ReadOnly = !Opcao;
             txtProteinas.ReadOnly = !Opcao;
             txtLipidios.ReadOnly = !Opcao;
-            txtFibras.ReadOnly = !Opcao;
+            txtFibra.ReadOnly = !Opcao;
             txtSodio.ReadOnly = !Opcao;
-            txtSodio.ReadOnly = !Opcao;
-
-            groupFonte.Enabled = Opcao;
         }
 
 
-
-
-
-
-
-
-
+                                 
         private void frmTabelaNutricional_Load(object sender, EventArgs e)
         {
+
+            txtBusca_TextChanged(sender, e);
+        }
+
+        private void txtBusca_TextChanged(object sender, EventArgs e)
+        {
+            DataTable rsItensTabela = new DataTable();
+
+            rsItensTabela = NTabelaNutricional.BuscarNome(txtBusca.Text);
+
+            gridItensTabela.AutoGenerateColumns = false;
+           
+            gridItensTabela.Columns["Coluna1"].DataPropertyName = "IdTabelaNutricional";
+            gridItensTabela.Columns["Coluna1"].Visible = false;
+            gridItensTabela.Columns["Coluna2"].DataPropertyName = "Nome";
+            gridItensTabela.Columns["Coluna3"].DataPropertyName = "Observacao";
+
+            gridItensTabela.DataSource = rsItensTabela;
+        }
+
+
+        private void gridItensTabela_SelectionChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void gridItensTabela_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void gridItensTabela_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            PrencherItemTabela();
+        }
+
+        private void btIncluir_Click(object sender, EventArgs e)
+        {
+            bolNovo = true;
+            LimparCampos();
+            AtivarModoEdicao(true);
+        }
+
+        private void btEditar_Click(object sender, EventArgs e)
+        {
+            if (radTACO.Checked)
+            {
+                MessageBox.Show("Não é permitido editar um item da tabela TACO");
+            }
+            else
+            {
+                AtivarModoEdicao(true);
+                bolNovo = false;
+            }
+        }
+
+        private void radTACO_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radTACO.Checked)
+            {
+                txtNumeroTACO.Enabled = true;
+            }
+            else
+            {
+                txtNumeroTACO.Enabled = false;
+            }
+        }
+
+        private void btSalvar_Click(object sender, EventArgs e)
+        {
+            string Nome = txtNome.Text ;
+            string Observacao= txtObservacao.Text ;
+            string FonteDetalhes= "Criado/Editado em: " + DateTime.Today.ToString() ;
+            int PesoAmostra=int.Parse( txtPesoAmostra.Text) ;
+            double Calorias=double.Parse( txtCalorias.Text );
+            double Proteinas= double.Parse(txtProteinas.Text) ;
+            double Lipidios= double.Parse(txtLipidios.Text );
+            double Sodio = double.Parse(txtSodio.Text );
+            double Fibras = double.Parse(txtFibra.Text);
+            double Carb = double.Parse(txtCarb.Text);
+            char Fonte = 'M';
+            if (bolNovo)
+            {
+                NTabelaNutricional.Incluir(Nome, Fonte, FonteDetalhes, Observacao, PesoAmostra, Calorias, Proteinas, Lipidios, Fibras, Sodio, Carb);
+                LimparCampos();
+            }
+            else
+            {
+                NTabelaNutricional.Editar(IdTabelaNutricional, Nome, Fonte, FonteDetalhes, Observacao, PesoAmostra, Calorias, Proteinas, Lipidios, Fibras, Sodio, Carb);
+            }
+            AtivarModoEdicao(false);
 
         }
     }

@@ -12,8 +12,6 @@ namespace CamadaDados
 {
     public class DTipoInsumo
     {
-        int idTipoInsumo;
-
         public DTipoInsumo()
         {
         }

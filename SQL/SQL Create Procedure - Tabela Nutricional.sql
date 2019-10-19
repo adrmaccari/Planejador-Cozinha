@@ -3,7 +3,6 @@ CREATE PROCEDURE sp_tabelanutricional_incluir
 	@Fonte CHAR(1),
 	@FonteDetalhe VARCHAR(100),
 	@Observacao VARCHAR (250),
-	@NumeroTACO INT,
 	@PesoAmostra DECIMAL(10,4),
 	@Caloria DECIMAL(10,4),
 	@Proteina DECIMAL(10,4),
@@ -12,8 +11,8 @@ CREATE PROCEDURE sp_tabelanutricional_incluir
 	@Sodio DECIMAL(10,4),
 	@Carb DECIMAL(10,4)
 AS
-	INSERT INTO TabelaNutricional (Nome,Fonte,FonteDetalhe,Observacao,NumeroTACO,PesoAmostra,Caloria,Proteina,Lipidio,Fibra,Sodio,Carb )
-	VALUES (@Nome, @Fonte, @FonteDetalhe, @Observacao,	@NumeroTACO, @PesoAmostra, @Caloria, @Proteina, @Lipidio, @Fibra, @Sodio, @Carb )
+	INSERT INTO TabelaNutricional (Nome,Fonte,FonteDetalhe,Observacao,PesoAmostra,Caloria,Proteina,Lipidio,Fibra,Sodio,Carb )
+	VALUES (@Nome, @Fonte, @FonteDetalhe, @Observacao, @PesoAmostra, @Caloria, @Proteina, @Lipidio, @Fibra, @Sodio, @Carb )
 GO
 
 
@@ -23,7 +22,6 @@ CREATE PROCEDURE sp_tabelanutricional_editar
 	@Fonte CHAR(1),
 	@FonteDetalhe VARCHAR(100),
 	@Observacao VARCHAR (250),
-	@NumeroTACO INT,
 	@PesoAmostra DECIMAL(10,4),
 	@Caloria DECIMAL(10,4),
 	@Proteina DECIMAL(10,4),
@@ -38,7 +36,6 @@ AS
 		Fonte = @Fonte, 
 		FonteDetalhe = @FonteDetalhe, 
 		Observacao = @Observacao,
-		NumeroTACO = @NumeroTACO, 
 		PesoAmostra = @PesoAmostra, 
 		Caloria = @Caloria, 
 		Proteina = @Proteina, 

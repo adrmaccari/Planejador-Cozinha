@@ -55,16 +55,31 @@ namespace GestaoCozinha
             FormPreparo.Show();
         }
 
-        private void configuraçõesToolStripMenuItem_Click(object sender, EventArgs e)
+  
+        private void mnuTabelaNutricional_Click(object sender, EventArgs e)
         {
             if (this.ActiveMdiChild != null)
             {
                 this.ActiveMdiChild.Close();
             }
 
-            frmConfiguracoes FormConfiguracao = new frmConfiguracoes();
-            FormConfiguracao.MdiParent = this;
-            FormConfiguracao.Show();
+            frmTabelaNutricional TabelaNutricional = new frmTabelaNutricional();
+            TabelaNutricional.MdiParent = this;
+            TabelaNutricional.Show();
+
+        }
+
+
+        private void mnuConfiguracoes_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
+            frmConfiguracoes FormConfiguracoes = new frmConfiguracoes();
+            FormConfiguracoes.MdiParent = this;
+            FormConfiguracoes.Show();
         }
     }
 }

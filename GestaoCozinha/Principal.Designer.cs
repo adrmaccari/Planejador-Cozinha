@@ -33,6 +33,8 @@
             this.mnuFileComprados = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFilePreparos = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTabelaNutricional = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuConfiguracoes = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,10 +75,26 @@
             // 
             // configuraçõesToolStripMenuItem
             // 
+            this.configuraçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuTabelaNutricional,
+            this.mnuConfiguracoes});
             this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
-            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
-            this.configuraçõesToolStripMenuItem.Text = "Configurações";
-            this.configuraçõesToolStripMenuItem.Click += new System.EventHandler(this.configuraçõesToolStripMenuItem_Click);
+            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.configuraçõesToolStripMenuItem.Text = "Admin";
+            // 
+            // mnuTabelaNutricional
+            // 
+            this.mnuTabelaNutricional.Name = "mnuTabelaNutricional";
+            this.mnuTabelaNutricional.Size = new System.Drawing.Size(180, 22);
+            this.mnuTabelaNutricional.Text = "&Tabela Nutricional";
+            this.mnuTabelaNutricional.Click += new System.EventHandler(this.mnuTabelaNutricional_Click);
+            // 
+            // mnuConfiguracoes
+            // 
+            this.mnuConfiguracoes.Name = "mnuConfiguracoes";
+            this.mnuConfiguracoes.Size = new System.Drawing.Size(180, 22);
+            this.mnuConfiguracoes.Text = "&Configurações";
+            this.mnuConfiguracoes.Click += new System.EventHandler(this.mnuConfiguracoes_Click);
             // 
             // Principal
             // 
@@ -105,6 +123,8 @@
         private System.Windows.Forms.ToolStripMenuItem mnuFileComprados;
         private System.Windows.Forms.ToolStripMenuItem mnuFilePreparos;
         private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuTabelaNutricional;
+        private System.Windows.Forms.ToolStripMenuItem mnuConfiguracoes;
     }
 }
 

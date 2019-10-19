@@ -16,7 +16,6 @@ namespace CamadaDados
         public char Fonte { get; set; }
         public string FonteDetalhe { get; set; }
         public string Observacao { get; set; }
-        public int NumeroTACO { get; set; }
         public int PesoAmostra { get; set; }
         public double Caloria { get; set; }
         public double Proteina { get; set; }
@@ -29,14 +28,13 @@ namespace CamadaDados
         {
         }
 
-        public DTabelaNutricional(int idTabelaNutricional, string nome, char fonte, string fonteDetalhe, string observacao, int numeroTACO, int pesoAmostra, double caloria, double proteina, double lipidio, double fibra, double sodio, double carb)
+        public DTabelaNutricional(int idTabelaNutricional, string nome, char fonte, string fonteDetalhe, string observacao, int pesoAmostra, double caloria, double proteina, double lipidio, double fibra, double sodio, double carb)
         {
-            IdTabelaNutricional = idTabelaNutricional,
+            IdTabelaNutricional = idTabelaNutricional;
             Nome = nome;
             Fonte = fonte;
             FonteDetalhe = fonteDetalhe;
             Observacao = observacao;
-            NumeroTACO = numeroTACO;
             PesoAmostra = pesoAmostra;
             Caloria = caloria;
             Proteina = proteina;
@@ -77,22 +75,16 @@ namespace CamadaDados
                 prmFonte.Value = tabelaNutricional.Fonte;
 
                 SqlParameter prmFonteDetalhe = new SqlParameter();
-                prmNome.ParameterName = "@FonteDetalhe";
-                prmNome.SqlDbType = SqlDbType.VarChar;
-                prmNome.Size = 100;
-                prmNome.Value = tabelaNutricional.FonteDetalhe;
+                prmFonteDetalhe.ParameterName = "@FonteDetalhe";
+                prmFonteDetalhe.SqlDbType = SqlDbType.VarChar;
+                prmFonteDetalhe.Size = 100;
+                prmFonteDetalhe.Value = tabelaNutricional.FonteDetalhe;
 
                 SqlParameter prmObservacao = new SqlParameter();
                 prmObservacao.ParameterName = "@Observacao";
                 prmObservacao.SqlDbType = SqlDbType.VarChar;
                 prmObservacao.Size = 100;
                 prmObservacao.Value = tabelaNutricional.Observacao;
-
-                SqlParameter prmNumeroTACO = new SqlParameter();
-                prmNumeroTACO.ParameterName = "@NumeroTACO";
-                prmNumeroTACO.SqlDbType = SqlDbType.Int;
-                prmNumeroTACO.Value = tabelaNutricional.NumeroTACO;
-
 
                 SqlParameter prmPesoAmostra = new SqlParameter();
                 prmPesoAmostra.ParameterName = "@PesoAmostra";
@@ -147,7 +139,6 @@ namespace CamadaDados
                 sqlComando.Parameters.Add(prmFonte);
                 sqlComando.Parameters.Add(prmFonteDetalhe);
                 sqlComando.Parameters.Add(prmObservacao);
-                sqlComando.Parameters.Add(prmNumeroTACO);
                 sqlComando.Parameters.Add(prmPesoAmostra);
                 sqlComando.Parameters.Add(prmCaloria);
                 sqlComando.Parameters.Add(prmProteina);
@@ -262,12 +253,6 @@ namespace CamadaDados
                 prmObservacao.Size = 100;
                 prmObservacao.Value = tabelaNutricional.Observacao;
 
-                SqlParameter prmNumeroTACO = new SqlParameter();
-                prmNumeroTACO.ParameterName = "@NumeroTACO";
-                prmNumeroTACO.SqlDbType = SqlDbType.Int;
-                prmNumeroTACO.Value = tabelaNutricional.NumeroTACO;
-
-
                 SqlParameter prmPesoAmostra = new SqlParameter();
                 prmPesoAmostra.ParameterName = "@PesoAmostra";
                 prmPesoAmostra.SqlDbType = SqlDbType.Int;
@@ -322,7 +307,6 @@ namespace CamadaDados
                 sqlComando.Parameters.Add(prmFonte);
                 sqlComando.Parameters.Add(prmFonteDetalhe);
                 sqlComando.Parameters.Add(prmObservacao);
-                sqlComando.Parameters.Add(prmNumeroTACO);
                 sqlComando.Parameters.Add(prmPesoAmostra);
                 sqlComando.Parameters.Add(prmCaloria);
                 sqlComando.Parameters.Add(prmProteina);
@@ -417,7 +401,7 @@ namespace CamadaDados
                 SqlParameter prmIdTabelaNutricional = new SqlParameter();
                 prmIdTabelaNutricional.ParameterName = "@IdTabelaNutricional";
                 prmIdTabelaNutricional.SqlDbType = SqlDbType.Int;
-                prmIdTabelaNutricional.Value = IdTabelaNutricional;
+                prmIdTabelaNutricional.Value = idTabelaNutricional;
 
                 // atribuir os parametos ao comando e executar
                 sqlComando.Parameters.Add(prmIdTabelaNutricional);
