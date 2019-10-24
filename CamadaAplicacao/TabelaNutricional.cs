@@ -83,27 +83,29 @@ namespace CamadaAplicacao
             btEditar.Enabled = !Opcao;
             btSalvar.Enabled = Opcao;
             btCancelar.Enabled = Opcao;
-            
+
+
             //Objetos da primeira tab:  DADOS GERAIS
+            txtBusca.ReadOnly = Opcao;
             txtNome.ReadOnly = !Opcao;
             txtObservacao.ReadOnly = !Opcao;
             txtPesoAmostra.ReadOnly = !Opcao;
 
             //Objetos da primeira tab:  DADOS NUTRICIONAIS
-            txtNumeroTACO.ReadOnly = !Opcao;
             txtCalorias.ReadOnly = !Opcao;
             txtProteinas.ReadOnly = !Opcao;
             txtLipidios.ReadOnly = !Opcao;
             txtFibra.ReadOnly = !Opcao;
             txtSodio.ReadOnly = !Opcao;
+            txtCarb.ReadOnly = !Opcao;
         }
 
 
                                  
         private void frmTabelaNutricional_Load(object sender, EventArgs e)
         {
-
             txtBusca_TextChanged(sender, e);
+            AtivarModoEdicao(false);
         }
 
         private void txtBusca_TextChanged(object sender, EventArgs e)
@@ -174,7 +176,7 @@ namespace CamadaAplicacao
         {
             string Nome = txtNome.Text ;
             string Observacao= txtObservacao.Text ;
-            string FonteDetalhes= "Criado/Editado em: " + DateTime.Today.ToString() ;
+            string FonteDetalhes= "Criado/Editado em: " + DateTime.Today.ToShortDateString() ;
             int PesoAmostra=int.Parse( txtPesoAmostra.Text) ;
             double Calorias=double.Parse( txtCalorias.Text );
             double Proteinas= double.Parse(txtProteinas.Text) ;
@@ -194,6 +196,12 @@ namespace CamadaAplicacao
             }
             AtivarModoEdicao(false);
 
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+            AtivarModoEdicao(false);
         }
     }
 }

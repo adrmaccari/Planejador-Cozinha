@@ -52,7 +52,7 @@ CONSTRAINT Pk_Child FOREIGN KEY (IdInsumo) REFERENCES Insumo
 
 
 CREATE TABLE TabelaNutricional(
-IdTabelaNutricional INT PRIMARY KEY NOT NULL,
+IdTabelaNutricional INT IDENTITY PRIMARY KEY,
 Nome VARCHAR(100) NOT NULL,
 Fonte CHAR(1),
 FonteDetalhe VARCHAR(100),
@@ -66,3 +66,6 @@ Fibra DECIMAL(10,4),
 Sodio DECIMAL(10,4),
 Carb DECIMAL(10,4)
 )
+
+
+

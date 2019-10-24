@@ -242,10 +242,10 @@ namespace CamadaDados
                 prmFonte.Value = tabelaNutricional.Fonte;
 
                 SqlParameter prmFonteDetalhe = new SqlParameter();
-                prmNome.ParameterName = "@FonteDetalhe";
-                prmNome.SqlDbType = SqlDbType.VarChar;
-                prmNome.Size = 100;
-                prmNome.Value = tabelaNutricional.FonteDetalhe;
+                prmFonteDetalhe.ParameterName = "@FonteDetalhe";
+                prmFonteDetalhe.SqlDbType = SqlDbType.VarChar;
+                prmFonteDetalhe.Size = 100;
+                prmFonteDetalhe.Value = tabelaNutricional.FonteDetalhe;
 
                 SqlParameter prmObservacao = new SqlParameter();
                 prmObservacao.ParameterName = "@Observacao";

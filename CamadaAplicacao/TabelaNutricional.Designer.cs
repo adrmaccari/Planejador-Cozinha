@@ -84,7 +84,7 @@
             this.txtBusca.Location = new System.Drawing.Point(119, 42);
             this.txtBusca.Name = "txtBusca";
             this.txtBusca.Size = new System.Drawing.Size(378, 22);
-            this.txtBusca.TabIndex = 1;
+            this.txtBusca.TabIndex = 0;
             this.txtBusca.TextChanged += new System.EventHandler(this.txtBusca_TextChanged);
             // 
             // gridItensTabela
@@ -258,8 +258,10 @@
             this.txtNumeroTACO.Enabled = false;
             this.txtNumeroTACO.Location = new System.Drawing.Point(124, 40);
             this.txtNumeroTACO.Name = "txtNumeroTACO";
+            this.txtNumeroTACO.ReadOnly = true;
             this.txtNumeroTACO.Size = new System.Drawing.Size(130, 22);
             this.txtNumeroTACO.TabIndex = 3;
+            this.txtNumeroTACO.TabStop = false;
             // 
             // label12
             // 
@@ -317,9 +319,11 @@
             this.txtFonteDetalhes.Location = new System.Drawing.Point(123, 570);
             this.txtFonteDetalhes.Multiline = true;
             this.txtFonteDetalhes.Name = "txtFonteDetalhes";
+            this.txtFonteDetalhes.ReadOnly = true;
             this.txtFonteDetalhes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtFonteDetalhes.Size = new System.Drawing.Size(374, 65);
             this.txtFonteDetalhes.TabIndex = 8;
+            this.txtFonteDetalhes.TabStop = false;
             // 
             // label9
             // 
@@ -378,6 +382,7 @@
             this.btCancelar.TabIndex = 11;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // btSalvar
             // 
